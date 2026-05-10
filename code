@@ -1,0 +1,63 @@
+Pythone Code for internal connections SQl using Flask:
+from flask import Flask, request, jsonify
+import mysql.connector
+
+# Create Flask app
+app = Flask(__name__)
+
+# -----------------------------
+# MySQL Database Connection
+# -----------------------------
+
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Chinnu_SQL@2026",   # Replace with your MySQL password
+    database="api_project"
+)
+
+cursor = db.cursor()
+
+print("✅ MySQL Connected Successfully")
+
+# -----------------------------
+# Register API
+# -----------------------------
+
+@app.route('/register', methods=['POST'])
+
+def register():
+
+    # Get JSON data from Postman
+    data = request.json
+
+    # Extract values
+    name = data['name']
+    email = data['email']
+
+    # SQL Query
+    sql = """
+    INSERT INTO users (name, email)
+    VALUES (%s, %s)
+    """
+
+    # Values tuple
+    values = (name, email)
+
+    # Execute SQL query
+    cursor.execute(sql, values)
+
+    # Save data permanently
+    db.commit()
+
+    # Send API response
+    return jsonify({
+        "message": "User Registered Successfully"
+    })
+
+# -----------------------------
+# Run Flask Server
+# -----------------------------
+
+if __name__ == '__main__':
+    app.run(debug=True)
