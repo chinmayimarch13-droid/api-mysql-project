@@ -40,5 +40,19 @@ url link for API POSTMAN:http://127.0.0.1:5000/register
 ## Database Validation Query
 
 SELECT * FROM users;
+## FINAL PROJECT STRUCTURE
+api-mysql-project/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── screenshots/
+│   ├── postman_request.png
+│   ├── mysql_output.png
+│   └── api_response.png
+│
+└── sql_queries/
+    └── users_table.sql
 ## Authore
 Chinmayii
