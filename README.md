@@ -40,3 +40,5 @@ url link for API POSTMAN:http://127.0.0.1:5000/register
 ## Database Validation Query
 
 SELECT * FROM users;
+## Authore
+Chinmayii
