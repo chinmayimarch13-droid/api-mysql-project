@@ -22,7 +22,8 @@ This project demonstrates real-world backend integration using:
 
 ## API Endpoint
 POST /register
-
+## URL 
+url link for API POSTMAN:http://127.0.0.1:5000/register
 ## Sample JSON Request
 
 {
