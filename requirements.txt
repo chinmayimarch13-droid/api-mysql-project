@@ -1,2 +1,2 @@
-flask
+flask (Using flask we can create API)
 mysql-connector-python
